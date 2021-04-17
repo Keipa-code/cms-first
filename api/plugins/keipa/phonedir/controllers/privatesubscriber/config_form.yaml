@@ -1,0 +1,10 @@
+name: PrivateSubscriber
+form: $/keipa/phonedir/models/privatesubscriber/fields.yaml
+modelClass: Keipa\PhoneDir\Models\PrivateSubscriber
+defaultRedirect: keipa/phonedir/privatesubscriber
+create:
+    redirect: 'keipa/phonedir/privatesubscriber/update/:id'
+    redirectClose: keipa/phonedir/privatesubscriber
+update:
+    redirect: keipa/phonedir/privatesubscriber
+    redirectClose: keipa/phonedir/privatesubscriber

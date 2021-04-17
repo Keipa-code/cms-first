@@ -1,0 +1,21 @@
+fields:
+    phonenumber:
+        label: 'Номер телефона'
+        span: left
+        required: 1
+        type: text
+    firstname:
+        label: Имя
+        span: left
+        required: 1
+        type: text
+    surname:
+        label: Фамилия
+        span: left
+        required: 1
+        type: text
+    patronymic:
+        label: Отчество
+        span: left
+        required: 1
+        type: text

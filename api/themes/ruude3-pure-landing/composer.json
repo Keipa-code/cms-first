@@ -1,8 +1,0 @@
-{
-    "name": "ruude3/pure-landing-theme",
-    "type": "october-theme",
-    "description": "None",
-    "require": {
-        "composer/installers": "~1.0"
-    }
-}

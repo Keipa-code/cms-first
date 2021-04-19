@@ -1,6 +1,14 @@
 version: '3.2'
 services:
 
+
+  frontend-node-cli:
+    build:
+      context: api/docker
+      dockerfile: development/node/Dockerfile
+    volumes:
+      - ./api:/var/www
+
   api:
     build:
       context: api/docker

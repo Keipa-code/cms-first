@@ -1,0 +1,29 @@
+title = "Авторизация"
+url = "/login"
+layout = "default"
+is_hidden = 0
+
+[account]
+redirect = "manage"
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
+==
+<?php
+
+function onStart()
+{
+    $user = Auth::getUser();
+    if ($user) {
+        return Redirect::to('/manage');
+    }
+}
+?>
+==
+<div class="row allign-center">
+
+        <div class="col-md-6">
+            <h3>Sign in</h3>
+            {% partial account ~ '::signin' %}
+        </div>
+    </div>

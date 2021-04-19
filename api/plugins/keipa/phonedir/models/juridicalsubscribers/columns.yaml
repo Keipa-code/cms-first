@@ -1,0 +1,48 @@
+columns:
+    id:
+        label: id
+        type: number
+        invisible: true
+    created_at:
+        label: created_at
+        type: datetime
+        invisible: true
+    updated_at:
+        label: updated_at
+        type: datetime
+        invisible: true
+    org_name:
+        label: org_name
+        type: text
+        searchable: true
+        sortable: true
+    department_name:
+        label: department_name
+        type: text
+        searchable: true
+        sortable: true
+    country:
+        label: country
+        type: text
+        searchable: true
+        sortable: true
+    city:
+        label: city
+        type: text
+        searchable: true
+        sortable: true
+    street:
+        label: street
+        type: text
+        searchable: true
+        sortable: true
+    house:
+        label: house
+        type: text
+        searchable: true
+        sortable: true
+    float:
+        label: float
+        type: text
+        searchable: true
+        sortable: true

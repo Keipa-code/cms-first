@@ -1,0 +1,10 @@
+columns:
+    id:
+        label: id
+        type: number
+        invisible: true
+    phonenumber:
+        label: phonenumber
+        type: text
+        searchable: true
+        sortable: true

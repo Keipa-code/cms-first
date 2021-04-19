@@ -1,0 +1,29 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table keipa_phonedir_private'
+    - builder_table_create_keipa_phonedir_private.php
+1.0.3:
+    - 'Updated table keipa_phonedir_private'
+    - builder_table_update_keipa_phonedir_private.php
+1.0.4:
+    - 'Updated table keipa_phonedir_private'
+    - builder_table_update_keipa_phonedir_private_2.php
+1.0.5:
+    - 'Updated table keipa_phonedir_private'
+    - builder_table_update_keipa_phonedir_private_3.php
+1.0.6:
+    - 'Updated table keipa_phonedir_private'
+    - builder_table_update_keipa_phonedir_private_4.php
+1.0.7:
+    - 'Created table keipa_phonedir_juridical'
+    - builder_table_create_keipa_phonedir_juridical.php
+1.0.8:
+    - 'Updated table keipa_phonedir_juridical'
+    - builder_table_update_keipa_phonedir_juridical.php
+1.0.9:
+    - 'Created table keipa_phonedir_phonenumber'
+    - builder_table_create_keipa_phonedir_phonenumber.php
+1.0.10:
+    - 'Updated table keipa_phonedir_phonenumber'
+    - builder_table_update_keipa_phonedir_phonenumber.php

@@ -1,0 +1,4 @@
+title: PhoneDir
+modelClass: Keipa\PhoneDir\Models\PrivateSubscriber
+toolbar:
+    buttons: reorder_toolbar

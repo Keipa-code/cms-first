@@ -1,0 +1,31 @@
+columns:
+    id:
+        label: id
+        type: number
+    phonenumber:
+        label: phonenumber
+        type: text
+        searchable: true
+        sortable: true
+    firstname:
+        label: firstname
+        type: text
+        searchable: true
+        sortable: true
+    surname:
+        label: surname
+        type: text
+        searchable: true
+        sortable: true
+    patronymic:
+        label: patronymic
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: created_at
+        type: datetime
+        sortable: false
+    updated_at:
+        label: updated_at
+        type: datetime

@@ -1,0 +1,8 @@
+phonenumbers:
+  label: Phonenumbers
+  manage:
+    form: $/keipa/phonedir/models/phonenumber/relation_fields.yaml
+    list: $/keipa/phonedir/models/phonenumber/relation_columns.yaml
+  view:
+    list: $/keipa/phonedir/models/phonenumber/relation_columns.yaml
+    toolbarButtnos:

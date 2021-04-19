@@ -1,0 +1,41 @@
+fields:
+    org_name:
+        label: 'Название организации'
+        span: auto
+        required: 1
+        type: text
+    department_name:
+        label: Отдел
+        span: auto
+        required: 1
+        type: text
+    country:
+        label: Страна
+        span: auto
+        required: 1
+        type: text
+    city:
+        label: Город
+        span: auto
+        required: 1
+        type: text
+    street:
+        label: Улица
+        span: auto
+        type: text
+    house:
+        label: Здание/Дом
+        span: auto
+        required: 1
+        type: text
+    float:
+        label: Квартира
+        span: auto
+        required: 1
+        type: text
+    phonenumbers:
+        label: 'Номер телефона'
+        span: auto
+        type: partial
+        tab: keipa.phonedir::lang.juridicalsubscribers.phonenumbers
+        path: ~/plugins/keipa/phonedir/controllers/juridicalsubscriber/_phonenumbers.htm

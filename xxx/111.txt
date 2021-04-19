@@ -1,0 +1,25 @@
+!plugins/keipa/*
+*
+# Ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Misc
+!.gitignore
+!.editorconfig
+!composer.json
+!package.json
+
+# Themes
+!themes/phone-directory/*

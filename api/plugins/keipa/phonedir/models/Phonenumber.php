@@ -16,7 +16,8 @@ class Phonenumber extends Model
     public $timestamps = false;
 
     public $belongsTo = [
-        'juridical_subscribers' => 'Keipa\PhoneDir\Models\JuridicalSubscribers'
+        'juridical_subscribers' => 'Keipa\PhoneDir\Models\JuridicalSubscribers',
+        'private_subscriber' => 'Keipa\PhoneDir\Models\PrivateSubscribers'
     ];
 
     /**
@@ -28,5 +29,16 @@ class Phonenumber extends Model
      * @var array Validation rules
      */
     public $rules = [
+        'phonenumber' => 'unique:keipa_phonedir_phonenumber|regex:/8[0-9]{10}$/'
     ];
+
+    /**
+     * @var array The array of custom error messages.
+     */
+     public $customMessages = [
+         'phonenumber.unique' => 'Данный номер телефона занят другим абонентом',
+         'phonenumber.regex' => 'Номер телефона имеет формат 8ХХХХХХХХХХ, где Х цифра от 0 до 9. Например 87775554444'
+     ];
+
+
 }

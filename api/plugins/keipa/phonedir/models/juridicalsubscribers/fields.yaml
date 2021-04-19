@@ -34,8 +34,6 @@ fields:
         required: 1
         type: text
     phonenumbers:
-        label: 'Номер телефона'
         span: auto
-        type: partial
-        tab: keipa.phonedir::lang.juridicalsubscribers.phonenumbers
         path: ~/plugins/keipa/phonedir/controllers/juridicalsubscriber/_phonenumbers.htm
+        type: partial

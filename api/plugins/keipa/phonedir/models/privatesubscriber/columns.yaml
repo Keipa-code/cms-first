@@ -1,12 +1,4 @@
 columns:
-    id:
-        label: id
-        type: number
-    phonenumber:
-        label: phonenumber
-        type: text
-        searchable: true
-        sortable: true
     firstname:
         label: firstname
         type: text
@@ -22,10 +14,8 @@ columns:
         type: text
         searchable: true
         sortable: true
-    created_at:
-        label: created_at
-        type: datetime
-        sortable: false
-    updated_at:
-        label: updated_at
-        type: datetime
+    phonenumbers:
+        label: phonenumbers
+        type: text
+        select: phonenumber
+        relation: phonenumbers

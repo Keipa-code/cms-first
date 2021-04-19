@@ -46,3 +46,8 @@ columns:
         type: text
         searchable: true
         sortable: true
+    phonenumbers:
+        label: phonenumbers
+        type: text
+        select: phonenumber
+        relation: phonenumbers

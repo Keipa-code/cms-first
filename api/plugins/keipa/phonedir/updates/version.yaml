@@ -27,3 +27,15 @@
 1.0.10:
     - 'Updated table keipa_phonedir_phonenumber'
     - builder_table_update_keipa_phonedir_phonenumber.php
+1.0.11:
+    - 'Updated table keipa_phonedir_phonenumber'
+    - builder_table_update_keipa_phonedir_phonenumber_2.php
+1.0.12:
+    - 'Updated table keipa_phonedir_private'
+    - builder_table_update_keipa_phonedir_private_5.php
+1.0.13:
+    - 'Updated table keipa_phonedir_phonenumber'
+    - builder_table_update_keipa_phonedir_phonenumber_3.php
+1.0.14:
+    - 'Updated table keipa_phonedir_phonenumber'
+    - builder_table_update_keipa_phonedir_phonenumber_4.php

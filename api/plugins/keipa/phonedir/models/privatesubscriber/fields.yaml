@@ -1,9 +1,4 @@
 fields:
-    phonenumber:
-        label: 'Номер телефона'
-        span: left
-        required: 1
-        type: text
     firstname:
         label: Имя
         span: left
@@ -19,3 +14,7 @@ fields:
         span: left
         required: 1
         type: text
+    phonenumbers:
+        span: auto
+        path: ~/plugins/keipa/phonedir/controllers/privatesubscriber/_phonenumbers.htm
+        type: partial

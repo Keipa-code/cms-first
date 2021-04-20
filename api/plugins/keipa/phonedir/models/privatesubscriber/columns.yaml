@@ -1,0 +1,21 @@
+columns:
+    firstname:
+        label: firstname
+        type: text
+        searchable: true
+        sortable: true
+    surname:
+        label: surname
+        type: text
+        searchable: true
+        sortable: true
+    patronymic:
+        label: patronymic
+        type: text
+        searchable: true
+        sortable: true
+    phonenumbers:
+        label: phonenumbers
+        type: text
+        select: phonenumber
+        relation: phonenumbers

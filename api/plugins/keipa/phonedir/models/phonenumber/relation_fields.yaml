@@ -1,0 +1,5 @@
+fields:
+    phonenumber:
+        label: 'Номер телефона'
+        span: auto
+        type: text

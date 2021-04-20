@@ -1,4 +1,0 @@
-title: JuridicalSubscriber
-modelClass: Keipa\PhoneDir\Models\JuridicalSubscribers
-toolbar:
-    buttons: reorder_toolbar

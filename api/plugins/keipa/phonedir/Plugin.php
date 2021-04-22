@@ -1,7 +1,8 @@
 <?php namespace Keipa\PhoneDir;
 
+use Keipa\PhoneDir\Models\JuridicalSubscribers;
+use Keipa\PhoneDir\Models\Phonenumber;
 use System\Classes\PluginBase;
-use Illuminate\Database\Eloquent\Factory as EloquentFactory;
 
 class Plugin extends PluginBase
 {
@@ -13,8 +14,8 @@ class Plugin extends PluginBase
     {
     }
 
-    public function register()
+    public function registerSeeder()
     {
-        app(EloquentFactory::class)->load(plugins_path('keipa/phonedir/factories'));
+        factory(Phonenumber::class, 200)->create();
     }
 }

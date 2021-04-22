@@ -13,11 +13,11 @@ class BuilderTableCreateKeipaPhonedirJuridical extends Migration
             $table->increments('id')->unsigned();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
-            $table->string('org_name', 30);
-            $table->string('department_name', 30);
-            $table->string('country', 30);
-            $table->string('city', 30);
-            $table->string('street', 30);
+            $table->string('org_name', 50);
+            $table->string('department_name', 50);
+            $table->string('country', 50);
+            $table->string('city', 50);
+            $table->string('street', 50);
             $table->string('house', 10);
             $table->string('float', 10)->nullable();
         });

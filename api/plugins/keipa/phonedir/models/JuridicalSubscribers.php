@@ -24,11 +24,11 @@ class JuridicalSubscribers extends Model
      * @var array Validation rules
      */
     public $rules = [
-        'org_name' => 'required|min:1|max:30',
-        'department_name' => 'required|min:1|max:30',
-        'country' => 'required|min:1|max:30',
-        'city' => 'required|min:1|max:30',
-        'street' => 'required|min:1|max:30',
+        'org_name' => 'required|min:1|max:50',
+        'department_name' => 'required|min:1|max:50',
+        'country' => 'required|min:1|max:50',
+        'city' => 'required|min:1|max:50',
+        'street' => 'required|min:1|max:50',
         'house' => 'required|min:1|max:10',
         'float' => 'max:30',
     ];

@@ -6,22 +6,12 @@ use Keipa\PhoneDir\Models\Phonenumber;
 use Keipa\PhoneDir\Models\PrivateSubscriber;
 
 $factory->define(Phonenumber::class, function (Faker\Generator $faker) {
-    $random = $faker->randomDigitNotNull;
-    if ($random % 2) {
-        return [
-            'phonenumber' => $faker->regexify('8[0-9]{10}$'),
-            'private_subscriber_id' => function () {
-                return factory(PrivateSubscriber::class)->create()->id;
-            }
-        ];
-    }else {
-        return [
-            'phonenumber' => $faker->regexify('8[0-9]{10}$'),
-            'juridical_subscribers_id' => function () {
-                return factory(JuridicalSubscribers::class)->create()->id;
-            }
+    return [
+        'phonenumber' => $faker->regexify('8[0-9]{10}$'),
+        'juridical_subscribers_id' => function () {
+            return factory(JuridicalSubscribers::class)->create()->id;
+        }
     ];
-    }
 });
 
 $factory->define(PrivateSubscriber::class, function (Faker\Generator $faker) {

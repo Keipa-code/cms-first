@@ -7,7 +7,7 @@ is_hidden = 0
 modelClass = "Keipa\PhoneDir\Models\PrivateSubscriber"
 scope = "-"
 scopeValue = "{{ :scope }}"
-displayColumn = "phonenumber"
+displayColumn = "firstname"
 noRecordsMessage = "No records found"
 detailsPage = "-"
 detailsUrlParameter = "id"
@@ -34,7 +34,9 @@ pageNumber = "{{ :page }}"
     <tbody>
     {% for record in records %}
         <tr>
-            <th>{{ record.phonenumber }}</th>
+            {% for numb in record.phonenumbers %}
+            <th>{{ numb.phonenumber }}</th>
+            {% endfor %}
             <th>{{ record.surname }}</th>
             <th>{{ record.firstname }}</th>
             <th>{{ record.patronymic }}</th>

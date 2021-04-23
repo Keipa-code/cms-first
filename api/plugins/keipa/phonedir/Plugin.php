@@ -2,6 +2,7 @@
 
 use Keipa\PhoneDir\Models\JuridicalSubscribers;
 use Keipa\PhoneDir\Models\Phonenumber;
+use Keipa\PhoneDir\Models\PrivateSubscriber;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
@@ -16,6 +17,6 @@ class Plugin extends PluginBase
 
     public function registerSeeder()
     {
-        factory(Phonenumber::class, 200)->create();
+        factory(Phonenumber::class, 1000)->create();
     }
 }

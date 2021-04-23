@@ -15,7 +15,7 @@ class BuilderTableCreateKeipaPhonedirJuridical extends Migration
             $table->timestamp('updated_at')->nullable();
             $table->string('org_name', 50);
             $table->string('department_name', 50);
-            $table->string('country', 50);
+            $table->string('country', 80);
             $table->string('city', 50);
             $table->string('street', 50);
             $table->string('house', 10);

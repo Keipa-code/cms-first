@@ -127,7 +127,9 @@ yarn.lock
 /themes/*/content
 /themes/*/meta
 
-
+# Plugin
+plugins/*
+!plugins/keipa
 
 /.vagrant
 Homestead.json

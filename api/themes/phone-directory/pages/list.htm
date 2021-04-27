@@ -1,0 +1,49 @@
+title = "list"
+url = "/list"
+layout = "default"
+is_hidden = 0
+
+
+==
+<?
+    use Keipa\PhoneDir\Models\PrivateSubscriber;
+    function onStart() {
+        $this['name'] = Input::get('name');
+        $this['subs'] = PrivateSubscriber::findUserByName($this['name']);
+
+        //dd($this['name']);
+    }
+?>
+
+
+==
+<div class="container">
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+    <tr>
+        <th class="col-2" scope="col">Номер телефона</th>
+        <th scope="col">Фамилия</th>
+        <th scope="col">Имя</th>
+        <th scope="col">Отчество</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for sub in subs %}
+    <tr>
+        {% for numb in sub.phonenumbers %}
+        <td>{{ numb.phonenumber }}</td>
+        {% endfor %}
+        <td>{{ sub.surname }}</td>
+        <td>{{ sub.firstname }}</td>
+        <td>{{ sub.patronymic }}</td>
+    </tr>
+    {% else %}
+    <li class="no-data">Нету результатов</li>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+<div class="container">
+    {{ subs.render|raw }}
+</div>

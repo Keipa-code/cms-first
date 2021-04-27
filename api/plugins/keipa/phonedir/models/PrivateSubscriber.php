@@ -1,5 +1,6 @@
 <?php namespace Keipa\PhoneDir\Models;
 
+use Illuminate\Support\Facades\DB;
 use Model;
 
 /**
@@ -29,4 +30,19 @@ class PrivateSubscriber extends Model
         'surname' => 'required|min:1|max:30',
         'patronymic' => 'required|min:1|max:30'
     ];
+
+    public function scopeFindUserByName($query, $name)
+    {
+        // Concat the name columns and then apply search query on full name
+        return $query->where(DB::raw(
+            "REPLACE(
+                CONCAT(
+                    COALESCE(surname,''),' ',
+                    COALESCE(firstname,''),' ',
+                    COALESCE(patronymic,'')
+                ),
+            '  ',' ')"
+        ),
+            'like', '%' . $name . '%');
+    }
 }

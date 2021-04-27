@@ -16,11 +16,12 @@ description = "Default layout"
         {% styles %}
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container">
         {% partial "header" %}
         </div>
+        {% partial "navbar" %}
         <!-- Content -->
-        <section id="layout-content" class="container mt-5">
+        <section id="layout-content">
             {% page %}
         </section>
 

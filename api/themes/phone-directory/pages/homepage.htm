@@ -2,68 +2,27 @@ title = "Homepage"
 url = "/"
 layout = "default"
 is_hidden = 0
-
-[builderList]
-modelClass = "Keipa\PhoneDir\Models\PrivateSubscriber"
-scope = "-"
-scopeValue = "{{ :scope }}"
-displayColumn = "firstname"
-noRecordsMessage = "No records found"
-detailsPage = "-"
-detailsUrlParameter = "id"
-recordsPerPage = 50
-pageNumber = "{{ :page }}"
 ==
 
-{% set records = builderList.records %}
-{% set displayColumn = builderList.displayColumn %}
-{% set noRecordsMessage = builderList.noRecordsMessage %}
-{% set detailsPage = builderList.detailsPage %}
-{% set detailsKeyColumn = builderList.detailsKeyColumn %}
-{% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
-<table class="table table-striped table-hover table-bordered">
-    <thead>
-    <tr>
-        <th class="col-2" scope="col">Номер телефона</th>
-        <th scope="col">Фамилия</th>
-        <th scope="col">Имя</th>
-        <th scope="col">Отчество</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for record in records %}
-        <tr>
-            {% for numb in record.phonenumbers %}
-            <th>{{ numb.phonenumber }}</th>
-            {% endfor %}
-            <th>{{ record.surname }}</th>
-            <th>{{ record.firstname }}</th>
-            <th>{{ record.patronymic }}</th>
-        </tr>
-    {% else %}
-        <li class="no-data">{{ noRecordsMessage }}</li>
-    {% endfor %}
-    </tbody>
-</table>
-
-
-{% if records.lastPage > 1 %}
-    <ul class="pagination">
-        {% if records.currentPage > 1 %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a>
-            </li>
-        {% endif %}
-
-        {% for page in 1..records.lastPage %}
-            <li class="{{ records.currentPage == page ? 'active' : null }}">
-                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
-            </li>
-        {% endfor %}
-
-        {% if records.lastPage > records.currentPage %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a>
-            </li>
-        {% endif %}
-    </ul>
-{% endif %}
+    <div
+            class="bg-image d-flex align-items-center"
+            style="
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('/storage/app/media/back-pers.jpg');
+            height: 80vh;
+            "
+    >
+        <div class="container mb-5">
+        <form class="d-flex flex-fill justify-content-center bd-highlight mx-5" action="/list/private" method="get">
+            <div class="p-2 flex-fill bd-highlight">
+                <input type="search" class="form-control" id="name" name="name"
+                       placeholder="Введите фамилию, имя или отчество">
+            </div>
+            <div class="p-2 bd-highlight ">
+                <button type="submit" class="btn btn-primary">Поиск</button>
+            </div>
+        </form>
+        </div>
+    </div>

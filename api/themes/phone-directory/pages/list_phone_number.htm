@@ -9,39 +9,46 @@ is_hidden = 0
 use Keipa\PhoneDir\Models\Phonenumber;
     function onStart() {
         $this['number'] = Input::get('number');
-        $this['subs'] = Phonenumber::where('phonenumber', '=', $this['number'])->get();
-
+        $this['subs'] = Phonenumber::findByNumber($this['number'])->get();
+        //dd($this['subs']['0']);
 }
 ?>
 ==
 
-<div class="container">
+<div class="container pt-2 px-5">
     <table class="table table-striped table-hover table-bordered">
         <thead>
         <tr>
-            <th class="col-2" scope="col">Номер телефона</th>
-            <th scope="col">Название организации</th>
-            <th scope="col">Отдел</th>
-            <th scope="col">Страна</th>
-            <th scope="col">Город</th>
-            <th scope="col">Улица</th>
-            <th scope="col">Номер здания\офиса</th>
-            <th scope="col">Номер кабинета\квартиры</th>
+                <th class="col-2" scope="col">Номер телефона</th>
+                <th scope="col">Информация об абоненте</th>
         </tr>
         </thead>
         <tbody>
         {% for sub in subs %}
             <tr>
+                <td>{{ sub.phonenumber }}</td>
+                {% if sub.juridicalSubscribers.org_name   %}
+                    <td>
+                        {{
+                        sub.juridicalSubscribers.org_name ~ ', ' ~
+                        sub.juridicalSubscribers.department_name ~ ', Адрес: ' ~
+                        sub.juridicalSubscribers.country  ~ ', ' ~
+                        sub.juridicalSubscribers.city  ~ ', ' ~
+                        sub.juridicalSubscribers.street  ~ ', ' ~
+                        sub.juridicalSubscribers.house  ~ ', ' ~
+                        sub.juridicalSubscribers.float
 
-                    <td>{{ sub.phonenumber }}</td>
-
-                <td>{{ sub.org_name }}</td>
-                <td>{{ sub.department_name	 }}</td>
-                <td>{{ sub.country }}</td>
-                <td>{{ sub.city }}</td>
-                <td>{{ sub.street }}</td>
-                <td>{{ sub.house }}</td>
-                <td>{{ sub.float }}</td>
+                        }}
+                    </td>
+                {% else %}
+                    <td>
+                        {{
+                        sub.privateSubscriber.surname ~ ' ' ~
+                        sub.privateSubscriber.firstname ~ ' ' ~
+                        sub.privateSubscriber.patronymic
+                        }}
+                    </td>
+                {% endif %}
             </tr>
         {% else %}
             <li class="no-data">Нету результатов</li>

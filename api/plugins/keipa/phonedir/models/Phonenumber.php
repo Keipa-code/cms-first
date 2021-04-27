@@ -17,7 +17,7 @@ class Phonenumber extends Model
 
     public $belongsTo = [
         'juridical_subscribers' => 'Keipa\PhoneDir\Models\JuridicalSubscribers',
-        'private_subscriber' => 'Keipa\PhoneDir\Models\PrivateSubscribers'
+        'private_subscriber' => 'Keipa\PhoneDir\Models\PrivateSubscriber'
     ];
 
     /**
@@ -40,5 +40,21 @@ class Phonenumber extends Model
          'phonenumber.regex' => 'Номер телефона имеет формат 8ХХХХХХХХХХ, где Х цифра от 0 до 9. Например 87775554444'
      ];
 
+    public function scopeFindByNumber($query, $name)
+    {
+        return $query->where('phonenumber', 'like', '%' . $name . '%')
+            ->with('juridicalSubscribers')
+            ->with('privateSubscriber')
+            ->take(1);
+    }
 
+    public function juridicalSubscribers()
+    {
+        return $this->belongsTo(JuridicalSubscribers::class);
+    }
+
+    public function privateSubscriber()
+    {
+        return $this->belongsTo(PrivateSubscriber::class);
+    }
 }

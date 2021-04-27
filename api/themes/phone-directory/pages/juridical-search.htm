@@ -1,0 +1,27 @@
+title = "Juridical Search"
+url = "/juridical-search"
+layout = "default"
+is_hidden = 0
+==
+
+<div
+        class="bg-image d-flex align-items-center"
+        style="
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('/storage/app/media/back-pers.jpg');
+            height: 80vh;
+            "
+>
+    <div class="container mb-5">
+        <form class="d-flex flex-fill justify-content-center bd-highlight mx-5" action="/list/juridical" method="get">
+            <div class="p-2 flex-fill bd-highlight">
+                <input type="search" class="form-control" id="name" name="name"
+                       placeholder="Введите название организации">
+            </div>
+            <div class="p-2 bd-highlight ">
+                <button type="submit" class="btn btn-primary">Поиск</button>
+            </div>
+        </form>
+    </div>
+</div>

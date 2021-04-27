@@ -1,21 +1,17 @@
-title = "list"
-url = "/list"
+title = "Private list"
+url = "/list/private"
 layout = "default"
 is_hidden = 0
-
-
 ==
-<?
-    use Keipa\PhoneDir\Models\PrivateSubscriber;
+<?php
+use Keipa\PhoneDir\Models\PrivateSubscriber;
     function onStart() {
         $this['name'] = Input::get('name');
-        $this['subs'] = PrivateSubscriber::findUserByName($this['name']);
+        $this['subs'] = PrivateSubscriber::findUserByName($this['name'])->get();
 
-        //dd($this['name']);
+        //dd($this['subs']);
     }
 ?>
-
-
 ==
 <div class="container">
 <table class="table table-striped table-hover table-bordered">

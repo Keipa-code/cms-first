@@ -32,4 +32,6 @@ class JuridicalSubscribers extends Model
         'house' => 'required|min:1|max:10',
         'float' => 'max:30',
     ];
+
+
 }

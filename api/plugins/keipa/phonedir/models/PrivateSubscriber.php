@@ -1,6 +1,6 @@
 <?php namespace Keipa\PhoneDir\Models;
 
-use Illuminate\Support\Facades\DB;
+use Db;
 use Model;
 
 /**
@@ -33,8 +33,9 @@ class PrivateSubscriber extends Model
 
     public function scopeFindUserByName($query, $name)
     {
+
         // Concat the name columns and then apply search query on full name
-        return $query->where(DB::raw(
+        return $query->where(Db::raw(
             "REPLACE(
                 CONCAT(
                     COALESCE(surname,''),' ',
@@ -43,6 +44,57 @@ class PrivateSubscriber extends Model
                 ),
             '  ',' ')"
         ),
-            'like', '%' . $name . '%');
+            'like', '%' . $name . '%')
+            ->orWhere(Db::raw(
+                "REPLACE(
+                CONCAT(
+                    COALESCE(surname,''),' ',
+                    COALESCE(patronymic,''),' ',
+                    COALESCE(firstname,'')
+                ),
+            '  ',' ')"
+            ),
+                'like', '%' . $name . '%')
+            ->orWhere(Db::raw(
+                "REPLACE(
+                CONCAT(
+                    COALESCE(firstname,''),' ',
+                    COALESCE(patronymic,''),' ',
+                    COALESCE(surname,'')
+                ),
+            '  ',' ')"
+            ),
+                'like', '%' . $name . '%')
+            ->orWhere(Db::raw(
+                "REPLACE(
+                CONCAT(
+                    COALESCE(firstname,''),' ',
+                    COALESCE(surname,''),' ',
+                    COALESCE(patronymic,'')
+                ),
+            '  ',' ')"
+            ),
+                'like', '%' . $name . '%')
+            ->orWhere(Db::raw(
+                "REPLACE(
+                CONCAT(
+                    COALESCE(patronymic,''),' ',
+                    COALESCE(surname,''),' ',
+                    COALESCE(firstname,'')
+                ),
+            '  ',' ')"
+            ),
+                'like', '%' . $name . '%')
+            ->orWhere(Db::raw(
+                "REPLACE(
+                CONCAT(
+                    COALESCE(patronymic,''),' ',
+                    COALESCE(firstname,''),' ',
+                    COALESCE(surname,'')
+                ),
+            '  ',' ')"
+            ),
+                'like', '%' . $name . '%')
+            ;
     }
 }

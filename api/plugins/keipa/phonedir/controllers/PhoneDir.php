@@ -16,4 +16,10 @@ class PhoneDir extends Controller
         parent::__construct();
         BackendMenu::setContext('Keipa.PhoneDir', 'main-menu-item');
     }
+
+    public function scopeFindByNumber($query, $name)
+    {
+        return $query->join('contacts', 'users.id', '=', 'contacts.user_id')
+            ->join('orders', 'users.id', '=', 'orders.user_id');
+    }
 }

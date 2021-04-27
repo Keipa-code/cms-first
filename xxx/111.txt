@@ -31,3 +31,12 @@ class SeedAllTables extends Seeder
         'juridical_subscribers_id' => function () {
                     return factory(JuridicalSubscribers::class)->create()->id;
                 }
+
+"CONCAT(COALESCE(surname,''),' ',COALESCE(firstname,''),' ',COALESCE(patronymic,''))"
+
+ ' ', patronymic
+
+ where(Db::raw(
+             "(surname, ' ', firstname) as full_name"
+         ),
+             'like', '%' . $name . '%')
